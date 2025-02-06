@@ -1,6 +1,6 @@
 ---
 title: "In Class Lab - DIY Functions"
-author: "Dr. Shoemaker"
+author: "Mekayla Boles"
 date: "DATA 2401"
 output: html_document
 ---
@@ -16,7 +16,10 @@ The questions from your notes today are below, please copy your answers them her
 1. Write your own function that takes the temperature in Fahrenheit as an argument and returns the Celcius equivalent. 
 
 ```{R}
-
+temp = function(temperature_f) {
+    celcius = (temperature_f - 32) * 5/9
+    return(celcius)
+}
 
 ```
 
@@ -24,7 +27,11 @@ The questions from your notes today are below, please copy your answers them her
 
 
 ```{r}
-
+c_both = function(temperature_f, feet) {
+    celcius = (temperature_f - 32) * 5/9
+    meters = feet * 0.3048
+    return(c(celcius,meters))
+}
 
 ```
 
@@ -32,7 +39,16 @@ The questions from your notes today are below, please copy your answers them her
 3. Write a function that prints out a statement of whether the number passed as an argument is positive, negative or 0. 
 
 ```{R}
-
+number = 0
+p_o_n = function(number) {
+    if (number == 0) {
+      print("Number is zero.")
+  } else if (number < 1) {
+    print("Number is a negative.")
+  } else {
+    print("Number is a postive.")
+  }
+}
 
 ```
 
@@ -40,7 +56,15 @@ The questions from your notes today are below, please copy your answers them her
    + Don't use `abs()`. Use the flow from problem 1 and multiply by negative one as necessary. 
    
 ```{r}
-
+absolute = function(number) {
+    if (number < 1) {
+      absolute_value = number * -1
+  } else {
+    absolute_value = number 
+  } 
+  return(absolute_value)
+  
+}
 
 ```
 
@@ -48,7 +72,13 @@ The questions from your notes today are below, please copy your answers them her
    + There are functions that check and return T/F: `is.numeric()` or `is.character()` would be relevant here
    
 ```{r}
-
+error = function(charc) {
+    if (is.character(charc)) {
+      print("Please pass a numerical value to this function")
+  } else {
+    print("is a character")
+  }
+}
 
 
 ```
